@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--bg-primary);
+  --color-surface: var(--bg-surface);
+  --color-surface-elevated: var(--bg-surface-elevated);
+  --color-border-subtle: var(--border-subtle);
+  
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-brand: #19DDF5;
+  --color-ai: #8A7CFF;
+  --color-data: #4C8FFF;
+  --color-cyber: #23D5A3;
+  --color-auto: #F4B866;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+@layer base {
+  :root {
+    --bg-primary: #FAF9F6;
+    --bg-surface: rgba(0, 0, 0, 0.03);
+    --bg-surface-elevated: rgba(0, 0, 0, 0.05);
+    --border-subtle: rgba(0, 0, 0, 0.1);
+    
+    --text-primary: #1A1C1E;
+    --text-secondary: #4A5568;
+    --text-muted: #718096;
+  }
+
+  .dark {
+    --bg-primary: #0A0D12; /* Adjusted to be slightly darker/more distinct */
+    --bg-surface: rgba(255, 255, 255, 0.03);
+    --bg-surface-elevated: rgba(255, 255, 255, 0.06);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+
+    --text-primary: #F4F7FA;
+    --text-secondary: #9BA5B1;
+    --text-muted: #626C7A;
+  }
+  
+  body {
+    @apply bg-background text-text-primary font-sans antialiased transition-colors duration-500 selection:bg-brand/30;
+    overflow-x: hidden;
+  }
+
+  .dark body {
+    background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
+
+@layer utilities {
+  .glass-1 {
+    @apply bg-surface backdrop-blur-md border border-border-subtle;
+  }
+  .glass-2 {
+    @apply bg-surface-elevated backdrop-blur-lg border border-border-subtle shadow-lg;
+  }
+  .glass-3 {
+    @apply bg-surface-elevated backdrop-blur-xl border border-border-subtle shadow-xl;
+  }
+  .glass-4 {
+    @apply bg-surface-elevated backdrop-blur-2xl border border-white/20 shadow-2xl;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand to-ai;
+  }
+}
