@@ -56,26 +56,13 @@ export function Hero() {
   return (
     <section className="relative w-full pt-1 sm:pt-2 pb-4 lg:pb-6 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-8 xl:gap-12 min-h-0">
       {/* Left Column */}
-      <div className="w-full lg:w-[55%] xl:w-[54%] flex flex-col z-10">
-        {/* Top Badge */}
-        <motion.div 
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1 sm:py-1.5 rounded-full border border-border-subtle bg-surface/50 font-mono text-[11px] sm:text-xs shadow-xs w-fit">
-            <span className="w-2 h-2 rounded-full bg-brand animate-pulse" />
-            <span className="text-brand font-bold tracking-wider">CURRENTLY BUILDING</span>
-            <span className="text-text-muted">/ Openclaw Project</span>
-          </div>
-        </motion.div>
-
+      <div className="w-full lg:w-[52%] xl:w-[50%] flex flex-col z-10">
         {/* Name */}
         <motion.h1 
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.08 }}
-          className="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] 2xl:text-[4.25rem] font-black leading-[0.92] tracking-tight mt-3 sm:mt-4 text-text-primary uppercase"
+          className="text-5xl sm:text-6xl lg:text-[3.65rem] xl:text-[4.25rem] 2xl:text-[4.75rem] font-black leading-[0.92] tracking-tight mt-1 sm:mt-2 text-text-primary uppercase"
         >
           PARTH<br/>CHAUDHARI
         </motion.h1>
@@ -85,7 +72,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.14 }}
-          className="text-lg sm:text-xl lg:text-2xl xl:text-[1.75rem] font-bold text-brand mt-2 sm:mt-2.5 tracking-wide"
+          className="text-xl sm:text-2xl lg:text-[1.75rem] xl:text-3xl font-bold text-brand mt-2 sm:mt-2.5 tracking-wide"
         >
           AI & DATA SCIENCE ENGINEER
         </motion.h2>
@@ -95,7 +82,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-wrap items-center gap-2 sm:gap-2.5 mt-2 sm:mt-2.5 text-xs sm:text-[13px] font-mono font-bold tracking-wider"
+          className="flex flex-wrap items-center gap-2 sm:gap-2.5 mt-2.5 sm:mt-3 text-sm sm:text-[15px] font-mono font-bold tracking-wider"
         >
           <span className="text-cyber">CYBERSECURITY</span>
           <span className="text-text-muted">×</span>
@@ -111,9 +98,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.26 }}
-          className="text-sm sm:text-base text-text-secondary mt-3 sm:mt-4 max-w-[560px] leading-relaxed font-normal"
+          className="text-base sm:text-lg lg:text-[1.125rem] text-text-secondary mt-3.5 sm:mt-4.5 max-w-[620px] leading-relaxed font-normal"
         >
-          I build intelligent systems, data-driven applications, automation workflows and practical engineering projects.
+          I’m an AI & Data Science engineering Graduate focused on cybersecurity, security operations, and hands-on security projects.
         </motion.p>
 
         {/* Buttons (Primary + Secondary + Resume Compact Row) */}
@@ -121,26 +108,26 @@ export function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.32 }}
-          className="flex flex-wrap items-center gap-2.5 sm:gap-3 mt-4 sm:mt-5"
+          className="flex flex-wrap items-center gap-3 sm:gap-3.5 mt-5 sm:mt-6"
         >
           <a 
             href="#projects" 
             onClick={() => trackEvent('cta_click', { button: 'explore_my_work', location: 'hero' })}
-            className="h-10 sm:h-11 px-4 sm:px-5 rounded-lg bg-brand text-background hover:bg-brand/90 transition-all font-mono font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-md shadow-brand/20 active:scale-[0.98]"
+            className="h-11 sm:h-12 px-4.5 sm:px-5.5 rounded-lg bg-brand text-background hover:bg-brand/90 transition-all font-mono font-bold text-xs sm:text-[13px] uppercase tracking-wider flex items-center gap-2 shadow-md shadow-brand/20 active:scale-[0.98]"
           >
             <span>EXPLORE MY WORK</span>
-            <ArrowRight size={15} />
+            <ArrowRight size={16} />
           </a>
           <a 
             href={profile.github} 
             target="_blank" 
             rel="noreferrer" 
             onClick={() => trackEvent('github_click', { location: 'hero' })}
-            className="h-10 sm:h-11 px-3.5 sm:px-4 rounded-lg border border-border-subtle bg-surface/40 hover:bg-surface hover:border-brand/40 text-text-primary transition-all font-mono font-bold text-xs uppercase tracking-wider flex items-center gap-2 group active:scale-[0.98]"
+            className="h-11 sm:h-12 px-4 sm:px-4.5 rounded-lg border border-border-subtle bg-surface/40 hover:bg-surface hover:border-brand/40 text-text-primary transition-all font-mono font-bold text-xs sm:text-[13px] uppercase tracking-wider flex items-center gap-2 group active:scale-[0.98]"
           >
-            <Github size={15} className="text-text-muted group-hover:text-text-primary transition-colors" />
+            <Github size={16} className="text-text-muted group-hover:text-text-primary transition-colors" />
             <span>VIEW GITHUB</span>
-            <ArrowUpRight size={13} className="text-text-muted group-hover:text-text-primary transition-colors" />
+            <ArrowUpRight size={14} className="text-text-muted group-hover:text-text-primary transition-colors" />
           </a>
           <a 
             href="/resume.pdf" 
@@ -149,10 +136,10 @@ export function Hero() {
               trackEvent('resume_view_click', { location: 'hero' });
               setResumeModalOpen(true);
             }}
-            className="h-10 sm:h-11 px-3.5 sm:px-4 rounded-lg border border-border-subtle bg-surface/30 hover:bg-surface hover:border-brand/40 text-text-secondary hover:text-text-primary transition-all font-mono font-bold text-xs uppercase tracking-wider flex items-center gap-2 group active:scale-[0.98] cursor-pointer"
+            className="h-11 sm:h-12 px-4 sm:px-4.5 rounded-lg border border-border-subtle bg-surface/30 hover:bg-surface hover:border-brand/40 text-text-secondary hover:text-text-primary transition-all font-mono font-bold text-xs sm:text-[13px] uppercase tracking-wider flex items-center gap-2 group active:scale-[0.98] cursor-pointer"
             title="View and inspect Parth's official Resume"
           >
-            <FileText size={15} className="text-brand group-hover:scale-110 transition-transform" />
+            <FileText size={16} className="text-brand group-hover:scale-110 transition-transform" />
             <span>VIEW RESUME</span>
           </a>
         </motion.div>
@@ -162,23 +149,23 @@ export function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.38 }}
-          className="grid grid-cols-3 gap-2 sm:gap-2.5 mt-5 sm:mt-6 pt-3 border-t border-border-subtle/70 w-full max-w-[560px]"
+          className="grid grid-cols-3 gap-2 sm:gap-2.5 mt-5 sm:mt-6 pt-3.5 border-t border-border-subtle/70 w-full max-w-[600px]"
         >
-          <div className="p-2 sm:p-2.5 rounded-lg border border-border-subtle bg-surface/30 flex flex-col gap-0.5">
-            <div className="text-[9px] font-mono text-text-muted tracking-widest uppercase">GITHUB SYNC</div>
-            <div className="text-xs font-bold text-cyber flex items-center gap-1.5 font-mono">
+          <div className="p-2.5 sm:p-3 rounded-lg border border-border-subtle bg-surface/30 flex flex-col gap-0.5">
+            <div className="text-[10px] font-mono text-text-muted tracking-widest uppercase">GITHUB SYNC</div>
+            <div className="text-xs sm:text-[13px] font-bold text-cyber flex items-center gap-1.5 font-mono">
               <span className="w-1.5 h-1.5 rounded-full bg-cyber shadow-[0_0_8px_rgba(35,213,163,0.8)]" /> CONNECTED
             </div>
           </div>
-          <div className="p-2 sm:p-2.5 rounded-lg border border-border-subtle bg-surface/30 flex flex-col gap-0.5">
-            <div className="text-[9px] font-mono text-text-muted tracking-widest uppercase">PUBLIC WORK</div>
-            <div className="text-xs font-bold text-text-primary font-mono tracking-wide">
+          <div className="p-2.5 sm:p-3 rounded-lg border border-border-subtle bg-surface/30 flex flex-col gap-0.5">
+            <div className="text-[10px] font-mono text-text-muted tracking-widest uppercase">PUBLIC WORK</div>
+            <div className="text-xs sm:text-[13px] font-bold text-text-primary font-mono tracking-wide">
               25 Repositories
             </div>
           </div>
-          <div className="p-2 sm:p-2.5 rounded-lg border border-border-subtle bg-surface/30 flex flex-col gap-0.5">
-            <div className="text-[9px] font-mono text-text-muted tracking-widest uppercase">BUILD ENGINE</div>
-            <div className="text-xs font-bold text-auto font-mono tracking-wide">
+          <div className="p-2.5 sm:p-3 rounded-lg border border-border-subtle bg-surface/30 flex flex-col gap-0.5">
+            <div className="text-[10px] font-mono text-text-muted tracking-widest uppercase">BUILD ENGINE</div>
+            <div className="text-xs sm:text-[13px] font-bold text-auto font-mono tracking-wide">
               ACTIVE PIPELINE
             </div>
           </div>
@@ -186,12 +173,12 @@ export function Hero() {
       </div>
 
       {/* Right Column (Standardized Image + Floating Badges) */}
-      <div className="w-full lg:w-[45%] xl:w-[46%] relative mt-6 lg:mt-0 flex justify-center lg:justify-end">
+      <div className="w-full lg:w-[48%] xl:w-[50%] relative mt-6 lg:mt-0 flex justify-center lg:justify-end">
         <motion.div 
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[380px] xl:max-w-[400px] aspect-[4/5] max-h-[440px] sm:max-h-[480px] lg:max-h-[500px] xl:max-h-[520px] mx-auto lg:mr-0 z-10"
+          className="relative w-full max-w-[350px] sm:max-w-[400px] lg:max-w-[430px] xl:max-w-[460px] aspect-[4/5] max-h-[480px] sm:max-h-[530px] lg:max-h-[560px] xl:max-h-[590px] mx-auto lg:mr-0 z-10"
         >
           {/* Image Container */}
           <div 

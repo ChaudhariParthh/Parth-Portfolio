@@ -56,63 +56,7 @@ export function Navbar() {
           </div>
 
           {/* Right Controls */}
-          <div className="hidden lg:flex items-center gap-2.5">
-            {/* Engineering Mode Toggle */}
-            <button
-              onClick={toggleEngMode}
-              aria-label="Toggle Engineering Mode"
-              title={engMode ? "Engineering Mode: ACTIVE" : "Engineering Mode: STANDBY"}
-              className={cn(
-                "flex items-center gap-1.5 px-2.5 py-1 rounded-lg border font-mono text-[11px] tracking-wider transition-all cursor-pointer select-none active:scale-95",
-                engMode
-                  ? "border-cyber/50 bg-cyber/15 text-cyber shadow-[0_0_12px_rgba(35,213,163,0.25)] font-bold"
-                  : "border-border-subtle bg-surface/60 text-text-muted hover:text-text-primary hover:bg-surface"
-              )}
-            >
-              <span className={cn("w-1.5 h-1.5 rounded-full", engMode ? "bg-cyber animate-pulse" : "bg-text-muted/60")} />
-              <span>ENG MODE</span>
-              <span className={cn("text-[9px] px-1 py-0.2 rounded font-mono", engMode ? "bg-cyber/30 text-cyber" : "bg-surface text-text-muted")}>
-                {engMode ? "ON" : "OFF"}
-              </span>
-            </button>
-
-            {/* GitHub */}
-            <a 
-              href={profile.github} 
-              target="_blank" 
-              rel="noreferrer" 
-              onClick={() => trackEvent('github_click', { location: 'navbar' })}
-              className="p-1.5 text-text-secondary hover:text-text-primary hover:bg-surface transition-all border border-border-subtle rounded-lg active:scale-95 cursor-pointer" 
-              title="GitHub Profile"
-            >
-              <Github size={15} />
-            </a>
-
-            {/* Resume */}
-            <a 
-              href="/resume.pdf" 
-              onClick={(e) => {
-                e.preventDefault();
-                trackEvent('resume_view_click', { location: 'navbar' });
-                setResumeModalOpen(true);
-              }}
-              className="flex items-center gap-1.5 px-2.5 py-1 text-text-secondary hover:text-text-primary hover:bg-surface transition-all border border-border-subtle rounded-lg font-mono text-xs active:scale-95 cursor-pointer" 
-              title="Show Parth's Resume"
-            >
-              <FileText size={14} className="text-brand" />
-              <span>RESUME</span>
-            </a>
-
-            {/* Supabase Owner Dashboard */}
-            <button
-              onClick={() => setOwnerDashboardOpen(true)}
-              aria-label="Open Supabase Telemetry & Owner Dashboard"
-              title="Supabase Telemetry & Owner Dashboard (Alt+D)"
-              className="p-1.5 text-text-secondary hover:text-text-primary hover:bg-surface hover:border-brand/40 transition-all border border-border-subtle rounded-lg cursor-pointer group active:scale-95"
-            >
-              <Database size={15} className="group-hover:text-brand transition-colors" />
-            </button>
-
+          <div className="hidden lg:flex items-center gap-3">
             {/* Day / Night Mode Toggle */}
             <button 
               onClick={toggleTheme}
@@ -121,21 +65,21 @@ export function Navbar() {
               className="relative flex items-center p-0.5 rounded-full border border-border-subtle bg-surface/80 hover:bg-surface text-text-secondary hover:text-text-primary transition-all duration-300 font-mono text-[10px] tracking-wider cursor-pointer select-none active:scale-95"
             >
               <span className={cn(
-                "flex items-center gap-1 px-2 py-0.5 rounded-full transition-all duration-300",
+                "flex items-center gap-1 px-2.5 py-1 rounded-full transition-all duration-300",
                 theme === 'light' 
                   ? "bg-amber-500/20 text-amber-700 dark:text-amber-300 font-bold shadow-xs" 
                   : "text-text-muted hover:text-text-secondary"
               )}>
-                <Sun size={12} className={cn("transition-transform duration-300", theme === 'light' ? "rotate-0 text-amber-500" : "-rotate-90 opacity-40")} />
+                <Sun size={13} className={cn("transition-transform duration-300", theme === 'light' ? "rotate-0 text-amber-500" : "-rotate-90 opacity-40")} />
                 <span>DAY</span>
               </span>
               <span className={cn(
-                "flex items-center gap-1 px-2 py-0.5 rounded-full transition-all duration-300",
+                "flex items-center gap-1 px-2.5 py-1 rounded-full transition-all duration-300",
                 theme === 'dark' 
                   ? "bg-brand/20 text-brand font-bold shadow-xs" 
                   : "text-text-muted hover:text-text-secondary"
               )}>
-                <Moon size={12} className={cn("transition-transform duration-300", theme === 'dark' ? "rotate-0 text-brand" : "rotate-90 opacity-40")} />
+                <Moon size={13} className={cn("transition-transform duration-300", theme === 'dark' ? "rotate-0 text-brand" : "rotate-90 opacity-40")} />
                 <span>NIGHT</span>
               </span>
             </button>
@@ -143,21 +87,6 @@ export function Navbar() {
 
           {/* Mobile Right Controls */}
           <div className="lg:hidden flex items-center gap-1.5 sm:gap-2">
-            {/* Engineering Mode (Mobile) */}
-            <button
-              onClick={toggleEngMode}
-              aria-label="Toggle Engineering Mode"
-              className={cn(
-                "h-9 px-2 rounded-lg border font-mono text-[10px] transition-all flex items-center gap-1 active:scale-95 cursor-pointer touch-manipulation",
-                engMode
-                  ? "border-cyber/50 bg-cyber/15 text-cyber font-bold"
-                  : "border-border-subtle bg-surface/60 text-text-muted"
-              )}
-            >
-              <span className={cn("w-1.5 h-1.5 rounded-full", engMode ? "bg-cyber animate-pulse" : "bg-text-muted/60")} />
-              <span>ENG</span>
-            </button>
-
             {/* Day / Night Mode Toggle (Mobile) */}
             <button 
               onClick={toggleTheme}
