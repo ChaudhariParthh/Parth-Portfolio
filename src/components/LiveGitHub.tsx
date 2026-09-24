@@ -170,7 +170,7 @@ export function LiveGitHub() {
                   )}
                 </div>
                 <span className="flex items-center gap-1 text-xs font-mono text-text-muted">
-                  <Clock size={12} /> {new Date(repo.updated_at).toLocaleDateString()}
+                  <Clock size={12} /> {new Date(repo.updated_at).toLocaleDateString('en-IN', { timeZone: 'Asia/Kolkata', day: 'numeric', month: 'short', year: 'numeric' })}
                 </span>
               </div>
 

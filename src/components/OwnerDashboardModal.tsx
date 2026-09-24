@@ -201,7 +201,18 @@ export function OwnerDashboardModal({ isOpen, onClose }: OwnerDashboardModalProp
                           </a>
                         </div>
                         <span className="text-[10px] font-mono text-text-muted">
-                          {item.created_at ? new Date(item.created_at).toLocaleString() : 'Recent'}
+                          {item.created_at 
+                            ? new Date(item.created_at).toLocaleString('en-IN', { 
+                                timeZone: 'Asia/Kolkata',
+                                day: 'numeric',
+                                month: 'short',
+                                year: 'numeric',
+                                hour: '2-digit',
+                                minute: '2-digit',
+                                second: '2-digit',
+                                hour12: true
+                              }) 
+                            : 'Recent'}
                         </span>
                       </div>
                       {item.subject && (
@@ -266,7 +277,15 @@ export function OwnerDashboardModal({ isOpen, onClose }: OwnerDashboardModalProp
                           <span className="text-text-secondary">{ev.path || '/'}</span>
                         </div>
                         <span className="text-[10px] text-text-muted">
-                          {ev.created_at ? new Date(ev.created_at).toLocaleTimeString() : 'Recent'}
+                          {ev.created_at 
+                            ? new Date(ev.created_at).toLocaleTimeString('en-IN', { 
+                                timeZone: 'Asia/Kolkata',
+                                hour: '2-digit',
+                                minute: '2-digit',
+                                second: '2-digit',
+                                hour12: true
+                              }) 
+                            : 'Recent'}
                         </span>
                       </div>
                     ))}

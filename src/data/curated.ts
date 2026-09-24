@@ -3,7 +3,7 @@ import { Certification } from '../types';
 export const profile = {
   name: "PARTH CHAUDHARI",
   title: "AI & DATA SCIENCE ENGINEER",
-  email: "parthchaudhari973@gmail.com",
+  email: "chaudhari.parth@outlook.com",
   phone: "+91-8767896259",
   linkedin: "https://linkedin.com/in/parthchaudhari",
   github: "https://github.com/ChaudhariParthh",

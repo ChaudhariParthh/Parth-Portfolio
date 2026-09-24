@@ -42,7 +42,7 @@ export function ResumeModal() {
   if (!resumeModalOpen) return null;
 
   const handleCopyContact = () => {
-    navigator.clipboard.writeText('parthchaudhari973@gmail.com | +91-8767896259');
+    navigator.clipboard.writeText('chaudhari.parth@outlook.com | +91-8767896259');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -179,8 +179,8 @@ export function ResumeModal() {
                   </h1>
                   
                   <div className="mt-2 text-xs text-gray-700 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 font-sans">
-                    <a href="mailto:parthchaudhari973@gmail.com" className="hover:text-blue-700 underline font-medium">
-                      parthchaudhari973@gmail.com
+                    <a href="mailto:chaudhari.parth@outlook.com" className="hover:text-blue-700 underline font-medium">
+                      chaudhari.parth@outlook.com
                     </a>
                     <span>|</span>
                     <a href="tel:+918767896259" className="hover:text-blue-700 font-medium">
