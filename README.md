@@ -1,4 +1,5 @@
 # Parth Chaudhari Portfolio
+<img width="1363" height="742" alt="Parth-Chaudhari-Portfolio" src="https://github.com/user-attachments/assets/6fdcd61b-3fb8-45df-810d-7bd6104870c2" />
 
 A modern personal portfolio showcasing my background, skills, projects, achievements, and ways to connect.
 
