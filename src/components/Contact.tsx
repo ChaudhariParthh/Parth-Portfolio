@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { Send, CheckCircle, AlertCircle, Github, Linkedin, Youtube, PenTool, Database } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, Github, Linkedin, Youtube, PenTool, Database, ShieldCheck } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { profile } from '../data/curated';
 import { submitContactForm } from '../lib/supabase';
@@ -20,7 +20,6 @@ export function Contact() {
     const subject = String(formData.get('subject') || '').trim();
     const message = String(formData.get('message') || '').trim();
 
-    // Client-side quick check
     if (!name || !email || !subject || !message) {
       setErrorMessage('Please fill in all required fields.');
       setStatus('ERROR');
@@ -39,10 +38,7 @@ export function Contact() {
       setStatus('SUCCESS');
       setErrorMessage('');
       form.reset();
-      
-      setTimeout(() => {
-        setStatus('IDLE');
-      }, 6000);
+      setTimeout(() => setStatus('IDLE'), 6000);
     } catch (error) {
       console.error('[Diagnostics] Contact submission exception:', error);
       setErrorMessage('Unable to send your message right now. Please try again.');
@@ -65,19 +61,24 @@ export function Contact() {
           <h4 className="text-sm font-mono tracking-widest text-text-muted">FIND ME ONLINE</h4>
           <div className="flex flex-col gap-4">
             <a href={`mailto:${profile.email}`} className="flex items-center gap-3 text-text-secondary hover:text-text-primary active:scale-[0.99] transition-all cursor-pointer group">
-              <div className="p-2 glass-1 rounded-lg text-text-primary group-hover:bg-surface group-hover:border-brand/40 border border-border-subtle transition-colors"><Send size={18} /></div> {profile.email}
+              <div className="p-2 glass-1 rounded-lg text-text-primary group-hover:bg-surface group-hover:border-brand/40 border border-border-subtle transition-colors"><Send size={18} /></div>
+              {profile.email}
             </a>
             <a href={profile.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-text-secondary hover:text-text-primary active:scale-[0.99] transition-all cursor-pointer group">
-              <div className="p-2 glass-1 rounded-lg text-text-primary group-hover:bg-surface group-hover:border-brand/40 border border-border-subtle transition-colors"><Linkedin size={18} /></div> LinkedIn
+              <div className="p-2 glass-1 rounded-lg text-text-primary group-hover:bg-surface group-hover:border-brand/40 border border-border-subtle transition-colors"><Linkedin size={18} /></div>
+              LinkedIn
             </a>
             <a href={profile.github} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-text-secondary hover:text-text-primary active:scale-[0.99] transition-all cursor-pointer group">
-              <div className="p-2 glass-1 rounded-lg text-text-primary group-hover:bg-surface group-hover:border-brand/40 border border-border-subtle transition-colors"><Github size={18} /></div> GitHub
+              <div className="p-2 glass-1 rounded-lg text-text-primary group-hover:bg-surface group-hover:border-brand/40 border border-border-subtle transition-colors"><Github size={18} /></div>
+              GitHub
             </a>
             <a href={profile.youtube} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-text-secondary hover:text-text-primary active:scale-[0.99] transition-all cursor-pointer group">
-              <div className="p-2 glass-1 rounded-lg text-text-primary group-hover:bg-surface group-hover:border-brand/40 border border-border-subtle transition-colors"><Youtube size={18} /></div> YouTube
+              <div className="p-2 glass-1 rounded-lg text-text-primary group-hover:bg-surface group-hover:border-brand/40 border border-border-subtle transition-colors"><Youtube size={18} /></div>
+              YouTube
             </a>
             <a href={profile.medium} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-text-secondary hover:text-text-primary active:scale-[0.99] transition-all cursor-pointer group">
-              <div className="p-2 glass-1 rounded-lg text-text-primary group-hover:bg-surface group-hover:border-brand/40 border border-border-subtle transition-colors"><PenTool size={18} /></div> Medium
+              <div className="p-2 glass-1 rounded-lg text-text-primary group-hover:bg-surface group-hover:border-brand/40 border border-border-subtle transition-colors"><PenTool size={18} /></div>
+              Medium
             </a>
           </div>
         </div>
@@ -87,56 +88,28 @@ export function Contact() {
         <form onSubmit={handleSubmit} className="glass-2 rounded-3xl p-8 flex flex-col gap-6">
           <div className="flex flex-col gap-2">
             <label htmlFor="name" className="text-sm font-mono text-text-secondary">NAME</label>
-            <input 
-              required
-              id="name"
-              name="name"
-              type="text" 
-              className="w-full bg-surface border border-border-subtle rounded-xl px-4 py-3 text-text-primary focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all"
-            />
+            <input required id="name" name="name" type="text" className="w-full bg-surface border border-border-subtle rounded-xl px-4 py-3 text-text-primary focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all" />
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="email" className="text-sm font-mono text-text-secondary">EMAIL</label>
-            <input 
-              required
-              id="email"
-              name="email"
-              type="email" 
-              className="w-full bg-surface border border-border-subtle rounded-xl px-4 py-3 text-text-primary focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all"
-            />
+            <input required id="email" name="email" type="email" className="w-full bg-surface border border-border-subtle rounded-xl px-4 py-3 text-text-primary focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all" />
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="subject" className="text-sm font-mono text-text-secondary">SUBJECT</label>
-            <input 
-              required
-              id="subject"
-              name="subject"
-              type="text" 
-              className="w-full bg-surface border border-border-subtle rounded-xl px-4 py-3 text-text-primary focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all"
-            />
+            <input required id="subject" name="subject" type="text" className="w-full bg-surface border border-border-subtle rounded-xl px-4 py-3 text-text-primary focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all" />
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="message" className="text-sm font-mono text-text-secondary">MESSAGE</label>
-            <textarea 
-              required
-              id="message"
-              name="message"
-              rows={4}
-              className="w-full bg-surface border border-border-subtle rounded-xl px-4 py-3 text-text-primary focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all resize-none"
-            />
+            <textarea required id="message" name="message" rows={4} className="w-full bg-surface border border-border-subtle rounded-xl px-4 py-3 text-text-primary focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all resize-y" />
           </div>
 
-          <button 
-            disabled={status === 'SENDING' || status === 'SUCCESS'}
-            type="submit"
-            className={cn(
-              "w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all cursor-pointer",
-              status === 'IDLE' ? "bg-text-primary text-background hover:scale-[1.01] active:scale-[0.98]" :
-              status === 'SENDING' ? "bg-surface-elevated text-text-muted cursor-not-allowed" :
-              status === 'SUCCESS' ? "bg-cyber text-background" :
-              "bg-red-500/20 text-red-500 border border-red-500/50 hover:bg-red-500/30"
-            )}
-          >
+          <button disabled={status === 'SENDING' || status === 'SUCCESS'} type="submit" className={cn(
+            'w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all cursor-pointer',
+            status === 'IDLE' ? 'bg-text-primary text-background hover:scale-[1.01] active:scale-[0.98]' :
+            status === 'SENDING' ? 'bg-surface-elevated text-text-muted cursor-not-allowed' :
+            status === 'SUCCESS' ? 'bg-cyber text-background' :
+            'bg-red-500/20 text-red-500 border border-red-500/50 hover:bg-red-500/30'
+          )}>
             {status === 'IDLE' && <><Send size={18} /> SEND MESSAGE</>}
             {status === 'SENDING' && <span className="animate-pulse font-mono">SENDING MESSAGE...</span>}
             {status === 'SUCCESS' && <><CheckCircle size={18} /> MESSAGE SENT</>}
@@ -149,7 +122,6 @@ export function Contact() {
               <span>{errorMessage || 'Unable to send your message right now. Please try again.'}</span>
             </div>
           )}
-
           {status === 'SUCCESS' && (
             <div className="text-center font-mono text-xs text-cyber flex items-center justify-center gap-1.5 animate-fade-in p-2.5 rounded-xl bg-cyber/10 border border-cyber/20">
               <CheckCircle size={14} className="shrink-0" />
@@ -158,11 +130,12 @@ export function Contact() {
           )}
 
           <div className="flex items-center justify-between text-[11px] font-mono text-text-muted pt-2 border-t border-border-subtle/50">
-            <span className="flex items-center gap-1.5">
-              <Database size={12} className="text-brand" />
-              <span>DIRECT MESSAGING</span>
-            </span>
+            <span className="flex items-center gap-1.5"><Database size={12} className="text-brand" /><span>DIRECT MESSAGING</span></span>
             <span className="text-cyber">SECURE GATEWAY</span>
+          </div>
+          <div className="flex items-center justify-center gap-2 text-xs text-text-muted font-mono" aria-label="Contact form powered by Supabase">
+            <ShieldCheck size={14} className="text-cyber" />
+            <span>CONTACT FORM POWERED BY SUPABASE</span>
           </div>
         </form>
       </div>
