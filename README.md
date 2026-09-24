@@ -4,7 +4,7 @@
 A modern personal portfolio showcasing my background, skills, projects, achievements, and ways to connect.
 
 <p>
-  <a href="https://parth-chaudhari-portfollio.ai.studio"><strong>Visit Portfolio</strong></a>
+  <a href="https://parth-chaudhari-portfolio.ai.studio"><strong>Visit Portfolio</strong></a>
   ·
   <a href="https://github.com/ChaudhariParthh"><strong>GitHub</strong></a>
 </p>
