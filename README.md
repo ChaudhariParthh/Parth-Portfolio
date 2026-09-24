@@ -61,6 +61,20 @@ Portfolio website  -> personal brand, projects, and contact information
 
 Files related to certifications and professional achievements are stored in the `public/certificates` directory. Supported formats include PDF, JPG, JPEG, PNG, and WEBP.
 
+## Contact Form Automation
+
+The portfolio includes a contact form that allows visitors to send inquiries and collaboration requests. The submission workflow uses Supabase and Make.com to store messages and deliver near-instant notifications.
+
+### How It Works
+
+1. A visitor submits the contact form on the portfolio website.
+2. The submitted information is stored in the appropriate Supabase table.
+3. A Supabase webhook trigger monitors that table and sends the new submission to the configured Make.com webhook URL.
+4. Make.com receives the webhook payload and processes the workflow automatically.
+5. Make.com uses Gmail to send an email notification, allowing me to respond promptly—typically within a few seconds.
+
+This integration keeps contact submissions organized in Supabase while automating reliable, near-instant email notifications through Make.com and Gmail.
+
 ## Local Development
 
 Use the project scripts defined in `package.json`.
