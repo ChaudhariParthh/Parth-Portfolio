@@ -1,11 +1,9 @@
-<div align="center">
+# Parth Chaudhari Portfolio
 
-# ✨ Parth Chaudhari — Portfolio
-
-### Building thoughtful digital experiences with code, creativity, and curiosity.
+A modern personal portfolio showcasing my background, skills, projects, achievements, and ways to connect.
 
 <p>
-  <a href="https://parth-chaudhari-portfollio.ai.studio"><strong>🌐 Visit Portfolio</strong></a>
+  <a href="https://parth-chaudhari-portfollio.ai.studio"><strong>Visit Portfolio</strong></a>
   ·
   <a href="https://github.com/ChaudhariParthh"><strong>GitHub</strong></a>
 </p>
@@ -16,96 +14,76 @@
   <img src="https://img.shields.io/github/repo-size/ChaudhariParthh/Parth-Portfolio?style=for-the-badge&color=06b6d4" alt="Repository size" />
 </p>
 
-</div>
-
 ---
 
-## 👋 Welcome
+## Welcome
 
-This repository powers **Parth Chaudhari’s personal portfolio**—a central place to discover my background, capabilities, selected work, achievements, and ways to connect.
+This repository powers the portfolio website for Parth Chaudhari. It serves as a central place to explore my profile, technical strengths, selected work, achievements, and contact details.
 
-> **Explore the live experience:** [parth-chaudhari-portfollio.ai.studio](https://parth-chaudhari-portfollio.ai.studio)
+> Live site: [parth-chaudhari-portfollio.ai.studio](https://parth-chaudhari-portfollio.ai.studio)
 
-## 🧭 Explore the portfolio
+## Portfolio Overview
 
-| Section | What you’ll find |
+| Section | Details |
 | --- | --- |
-| 🏠 **Home** | A quick introduction and a snapshot of my professional profile |
-| 🙋 **About** | My background, interests, and the ideas that shape my work |
-| 🛠️ **Skills** | Technologies and capabilities I use to turn ideas into products |
-| 🚀 **Projects** | Selected work, experiments, and portfolio highlights |
-| 📜 **Certificates** | Certifications and achievements collected in [`public/certificates`](./public/certificates) |
-| 📄 **Resume** | A concise overview of my experience and qualifications |
-| ✉️ **Contact** | Opportunities to connect, collaborate, or start a conversation |
+| Home | Introduction and professional identity |
+| About | Background, interests, and the principles behind my work |
+| Skills | Technologies and capabilities I use to build solutions |
+| Projects | Selected portfolio highlights and experiences |
+| Certificates | Credentials and achievements stored in the project assets |
+| Resume | Professional summary and qualifications |
+| Contact | Ways to connect for opportunities and collaborations |
 
-<details>
-<summary><strong>💡 Why this portfolio?</strong></summary>
-<br />
+## Technology Stack
 
-A portfolio should be more than a list of technologies. This site is designed to show how I think, what I build, and how I approach turning a problem into a clear, useful experience.
-
-</details>
-
-## 🧰 Technology
-
-The project is built with a **TypeScript-first** approach. For the complete and always-current dependency list, see [`package.json`](./package.json).
+This project is built using a TypeScript-based frontend setup.
 
 ```text
-TypeScript  →  application logic and type safety
-Modern web  →  responsive, accessible experiences
-Portfolio   →  projects, skills, achievements, and contact
+TypeScript  -> application logic and type safety
+Modern web stack  -> responsive and interactive user experience
+Portfolio website  -> personal brand, projects, and contact information
 ```
 
-## 📁 Repository at a glance
+## Repository Structure
 
 ```text
 .
 ├── public/
-│   └── certificates/  # Certificate and achievement assets
-├── src/               # Portfolio application source
-├── package.json       # Scripts and dependencies
-└── README.md          # You are here
+│   └── certificates/       # Certificate and achievement assets
+├── src/                    # Application source code
+├── package.json            # Project scripts and dependencies
+├── README.md               # Repository documentation
+└── .gitignore              # Git ignore rules
 ```
 
-<details>
-<summary><strong>📜 Certificate assets</strong></summary>
-<br />
+## Certificate Assets
 
-Certificate and achievement files belong in [`public/certificates`](./public/certificates). Supported formats include **PDF, JPG, JPEG, PNG, and WEBP**.
+Files related to certifications and professional achievements are stored in the `public/certificates` directory. Supported formats include PDF, JPG, JPEG, PNG, and WEBP.
 
-</details>
+## Local Development
 
-## 🚀 Run locally
-
-> The exact scripts are defined in [`package.json`](./package.json). Use the package manager and commands configured by the project.
+Use the project scripts defined in `package.json`.
 
 ```bash
-# 1. Clone the repository
 git clone https://github.com/ChaudhariParthh/Parth-Portfolio.git
 cd Parth-Portfolio
-
-# 2. Install dependencies
 npm install
-
-# 3. Start the development server
 npm run dev
 ```
 
-Then open the local URL shown in your terminal.
+Then open the local URL shown in the terminal.
 
-## 🤝 Connect with Parth
+## Connect
 
-- 🌐 **Portfolio:** [parth-chaudhari-portfollio.ai.studio](https://parth-chaudhari-portfollio.ai.studio)
-- 💻 **GitHub:** [@ChaudhariParthh](https://github.com/ChaudhariParthh)
+- Portfolio: [parth-chaudhari-portfollio.ai.studio](https://parth-chaudhari-portfollio.ai.studio)
+- GitHub: [@ChaudhariParthh](https://github.com/ChaudhariParthh)
 
-Have an idea, opportunity, or collaboration in mind? The best place to start is the [portfolio contact section](https://parth-chaudhari-portfollio.ai.studio).
+For collaboration opportunities or inquiries, use the contact section on the live portfolio.
 
-## ⭐ Support
+## Support
 
-If this project inspires you, found it useful, or you enjoyed exploring it, consider giving the repository a ⭐ on [GitHub](https://github.com/ChaudhariParthh/Parth-Portfolio).
+If you find this project useful or inspiring, you can show your support by starring the repository on GitHub.
 
 ---
 
-<div align="center">
-  <sub>Designed and built by <a href="https://github.com/ChaudhariParthh">Parth Chaudhari</a>.</sub>
-</div>
+Designed and built by [Parth Chaudhari](https://github.com/ChaudhariParthh).
